@@ -18,7 +18,7 @@ $(document).ready(function(){
         $.ajax({
             'async': false,
             'global': false,
-            'url': "https://www.dropbox.com/s/h7lp9zgrflws5y3/nfhs4_sex_ratio.json?dl=1",
+            'url': "data/nfhs4_sex_ratio.json",
             'dataType': "json",
             'success': function (data) {
                 df = data;
@@ -73,7 +73,7 @@ $(document).ready(function(){
       });
   }
   
-  $.getJSON('https://www.dropbox.com/s/aqiv0ftt2gh8upz/india.json?dl=1', function(topo){
+  $.getJSON('data/india.json', function(topo){
       var geojson = topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]);
       L.geoJson(geojson, {
           style: function(feature) {
@@ -102,14 +102,14 @@ $(document).ready(function(){
   };
   // method that we will use to update the control based on feature properties passed
   info.update = function (props) {
-      this._div.innerHTML = '<h4>Sex ratio across 36 Indian states</h4>' +  (props ?
+      this._div.innerHTML = '<h4>Sex ratio (as per NFHS 2015-16)</h4>' +  (props ?
           '<b>' + props.ST_NM + '</b> : ' + state_data['st_total'][props.ST_NM] + 
           ' females per 1000 males': 'Hover over a state');
   };
   info.addTo(map);
 
   // draw a legend 
-  var sex_ratio = [850, 900, 940, 970, 1000];
+  var sex_ratio = [850, 900, 950, 970, 1000];
   function getColor(d) {
     return d > 1000  ? '#1a9641' :
            d > 970  ? '#a6d96a' :

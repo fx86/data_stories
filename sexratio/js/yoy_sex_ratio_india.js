@@ -18,7 +18,7 @@ $(document).ready(function(){
         $.ajax({
             'async': false,
             'global': false,
-            'url': "https://www.dropbox.com/s/2qwfs9jl3lu07n7/yoy_sex_ratio.json?dl=1",
+            'url': "data/yoy_sex_ratio.json",
             'dataType': "json",
             'success': function (data) {
                 df = data;
@@ -73,7 +73,7 @@ $(document).ready(function(){
       });
   }
   
-  $.getJSON('https://www.dropbox.com/s/aqiv0ftt2gh8upz/india.json?dl=1', function(topo){
+  $.getJSON('data/india.json', function(topo){
       var geojson = topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]);
       L.geoJson(geojson, {
           style: function(feature) {
@@ -102,7 +102,7 @@ $(document).ready(function(){
   };
   // method that we will use to update the control based on feature properties passed
   info.update = function (props) {
-      this._div.innerHTML = '<h4>Absolute change in sex ratio across 36 Indian states</h4>' +  (props ?
+      this._div.innerHTML = '<h4>Absolute change in sex ratio (NFHS 2005 vs NFHS 2015)</h4>' +  (props ?
           '<b>' + props.ST_NM + '</b> : ' + state_data['totals_diff'][props.ST_NM] + 
           ' females per 1000 males': 'Hover over a state');
   };

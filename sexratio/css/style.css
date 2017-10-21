@@ -1,4 +1,5 @@
 body { font-family: Georgia; }
+sub { font-size: 16px; }
 .container {
     margin: 2% 20% 2% 20% ;
     width: 60%;
@@ -9,7 +10,7 @@ div.story {
     text-align: justify;
 }
 div.visual {
-    width: 600px;
+    width: 700px;
     height: 400px;
 }
 div#yoy_sex_ratio {
@@ -75,6 +76,33 @@ button { margin-left: 20%; }
 table.td { float:right; }
 g.axis path { display: none; }
 g.tick text { font-size: 12px; }
-.x_axis_label, .y_axis_label {
+.scatter .x_axis_label, .scatter .y_axis_label {
   font-size: 16px;
+}
+button {
+    -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+    background-color:#f24537;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #d02718;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    /*text-shadow:0px 1px 0px #810e05;*/
+    float:right;
+}
+button:hover {
+    background-color:#c62d1f;
+}
+button:active {
+    position:relative;
+    top:1px;
 }

@@ -4,14 +4,14 @@
 var margin = {
     top: 40,
     right: 20,
-    bottom: 60,
+    bottom: 70,
     left: 60
 };
 var width = 800 - margin.left - margin.right;
 var height = 400 - margin.top - margin.bottom;
 
 // details about the data
-var dataFileName = "https://www.dropbox.com/s/vy4wmgnqpasf974/census_sex_ratio.csv?dl=1",
+var dataFileName = "data/sex_ratio_change.csv",
     varNames = {
         "xData": "st_2015",
         "xLabelText": "sex ratio as per NFHS-2015",
@@ -33,12 +33,10 @@ var yValue = function(d) { return d[varNames.yData]; },
 
 var scatterSize = 10;
 function getColor(d) {
-    // console.log(d, typeof(d), d.length)/
-    // console.log(d[varNames['yData']], d.state)
     if(d.length > 0){
         d = parseFloat(d);
         return d > 30  ? '#1a9641'  :
-               d > 0  ?  '#ffffbf'  :
+               d > 0  ?  '#ffff00'  :
                d > -30 ? '#fdae61'  :
                d > -100 ? '#d7191c' :
                           '';}
@@ -128,21 +126,23 @@ function setupData() {
                 "translate(" + (width/2) + " ," + 
                                (height + margin.top + 20) + ")")
             .style("text-anchor", "middle")
+            .style("font-size", '16px')
             .text(varNames.xLabelText);
 
         svg.append("g")
             .attr("class", "y axis")
             .call(yAxis)
             .append("text")
-            .attr("class", "y_axis_label")
             .attr("transform", "rotate(-90)")
             .attr("y", 0 - margin.left)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
+            .style("font-size", '16px')
             .text(varNames.yLabelText);
 
         svg.append("text")
             .attr("transform", "rotate(-90)")
+            .attr("class", "y_axis_label")
             .attr("y", 0 - margin.left)
             .attr("x",0 - (height / 2))
             .attr("dy", "1em")
