@@ -11,7 +11,7 @@ var width = 800 - margin.left - margin.right;
 var height = 400 - margin.top - margin.bottom;
 
 // details about the data
-var dataFileName = "data/sex_ratio_change.csv",
+var dataFileName = "https://www.dropbox.com/s/vy4wmgnqpasf974/census_sex_ratio.csv?dl=1",
     varNames = {
         "xData": "st_2015",
         "xLabelText": "sex ratio as per NFHS-2015",

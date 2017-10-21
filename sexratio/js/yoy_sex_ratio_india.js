@@ -18,7 +18,7 @@ $(document).ready(function(){
         $.ajax({
             'async': false,
             'global': false,
-            'url': "../data/yoy_sex_ratio.json",
+            'url': "https://www.dropbox.com/s/2qwfs9jl3lu07n7/yoy_sex_ratio.json?dl=1",
             'dataType': "json",
             'success': function (data) {
                 df = data;
@@ -73,7 +73,7 @@ $(document).ready(function(){
       });
   }
   
-  $.getJSON('../data/india.json', function(topo){
+  $.getJSON('https://www.dropbox.com/s/aqiv0ftt2gh8upz/india.json?dl=1', function(topo){
       var geojson = topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]);
       L.geoJson(geojson, {
           style: function(feature) {
