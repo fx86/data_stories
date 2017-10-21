@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>How the sex ratio is not doing good</title>
+    
+    <!-- SEE IF ALL THE METADATA BELOW HAS TO BE CHANGED -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="/js/d3.v4.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/topojson.min.js"></script>
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            The Indian Sex Ratio
+        </h1>
+        <div class="story">
+            <p>Gaurav, aged 34 hails from the city of Rohtak, Haryana. He works as a
+            domestic help and lives with his wife and 2 children. His wife is from Tamil
+            Nadu and at first glance it might seem like a progressive, interstate marriage in a 
+            state rife with rigid marriage laws but nothing could be further from the truth.
+            </p>
+
+            
+            <p>
+                He is one of the many Haryanvi men who were forced to find brides from other states,
+                as years of rampant female foeticide and rigid societal structures resulted in 
+                a drastic sex ratio. The lucrative trafficking business that sprung up to 
+                meet the void consists of agents, who "price" a suitable bridge from other states. 
+                The girl's family is usually poor and has more than one girl of "marriageabe age",
+                who meets the groom on the day of her marriage and in most cases, lives the rest of 
+                her life as a house maid with rarely any basic human rights.
+            </p>
+
+            <p>
+                Haryana is not the only state with a skewed ratio, but it certainly is the worst hit.
+                As per the National Family Health Scheme 2015-16, Haryana has the lowest sex ratio
+                at 876 females per thousand males. Punjab, followed a close second at 905. Let's look at 
+                how the remaining states are doing:
+            </p>
+        </div>
+        <div class="visual" id="sex_ratio_india">
+        </div>
+        <div class="story">
+            <p>
+                Going by the map above it may seem that it is only a handful of states which are
+                facing this skewness, the rest of seem to have a ratio higher than 970. But, for
+                a country to have a healthy sex ratio, not only should the states improve on their
+                individual performances but they should be able to sustain them. The map below 
+                shows the change in a state's sex ratio as compared to same in the previous 
+                National Family Health Survey of 2005-06.    
+            </p>
+        </div>
+        <div class="visual" id="yoy_sex_ratio"></div>
+        <div class="story">
+            <p>
+                You can use the mouse cursor above each state in each map to compare their
+                performances. In summary, NFHS 2015-16 saw 16 states observed a decrease in sex
+                ratio in comparison to 12 states which saw an increase. Take the case of Punjab
+                for instance. In the 2005-06 NFHS survey, its sex ratio hovered around 882 mark,
+                which is almost as low as Haryana's. But in 2015-16, its numbers have improved
+                by 23, and it stands at 905, which though is an improvement still leaves a
+                shortage of 100 females of a balanced 1000/1000.
+            </p>
+            <p>
+                The same inconsistent change between surveys is observable when we compare how
+                the state performances with that  in the Census survey of 2011.
+            </p>
+        </div>
+        <div class="scatter">
+            <h2>Sex ratio according to 
+                <span class="survey_name">NFHS 2015-16</span>
+                <button type="button" name="update_button" onclick="update_data()">
+                  Toggle data
+                </button>
+            </h2>
+        </div>
+        <div class="story">
+            <p>
+                During the Census survey 2011, the majority of states were shown to have a slight 
+                increase in sex ratio, in comparison to the Census survey 2005. But when we switch to 
+                NFHS - 2015, the majority fails to register an improvement in the sex ratio. 
+            </p>
+            <p>
+                India, it seems to have a long way to walk on the tight rope towards a balanced
+                sex ratio, if Gaurav's sons and other Haryanvi men are to find a Haryanvi bride.
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/sex_ratio_india.js"></script>
+    <script type="text/javascript" src="js/yoy_sex_ratio_india.js"></script>
+    <script type="text/javascript" src="js/scatterplot.js"></script>
+</body>
+</html>
